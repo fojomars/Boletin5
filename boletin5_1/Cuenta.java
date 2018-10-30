@@ -6,21 +6,24 @@
 package boletin5_1;
 
 /**
- *
+ * Este ejercicio sirve para añadir, quitar y trnasferir dinero en una cuenta bancaria.
  * @author fojomars
+ * @version 1.0
+ * @see http://www.github.com/fojomars
+ * @since 
  */
-public class Conta {
+public class Cuenta {
     //Variables
     private String nome;
     private String numConta;
     private double saldo;
     
     //Constructor por defecto
-    public Conta(){
+    public Cuenta(){
     }
     
     //Constructor con parámetros
-    public Conta(String nome, String nConta, double saldo){
+    public Cuenta(String nome, String nConta, double saldo){
         this.nome = nome;
         numConta = nConta;
         this.saldo = saldo;
