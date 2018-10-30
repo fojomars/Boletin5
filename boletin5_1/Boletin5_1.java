@@ -25,14 +25,20 @@ public class Boletin5_1 {
         
         //Añadir y quitar dinero de la primera cuenta
         obxCuenta1.ingresar(50);
+        System.out.println("La cantidad de dinero después de ingresar en la cuenta " + obxCuenta1.getNumConta() + " es: " +obxCuenta1.getSaldo());
         obxCuenta1.reintrego(100); 
-        System.out.println(obxCuenta1.getSaldo());
+        System.out.println("La cantidad de dinero después de retirar en la cuenta " + obxCuenta1.getNumConta() + " es: " +obxCuenta1.getSaldo());
         
         //Añadir y quitar dinero de la segunda cuenta
         obxCuenta2.ingresar(500);
+        System.out.println("La cantidad de dinero después de ingresar en la cuenta" + obxCuenta2.getNumConta() + " es: " +obxCuenta2.getSaldo());
         obxCuenta2.reintrego(250);
-        System.out.println(obxCuenta2.getSaldo());
-
+        System.out.println("La cantidad de dinero después de retirar en la cuenta" + obxCuenta2.getNumConta() + " es: " +obxCuenta2.getSaldo());
+        
+        //Hacer transferencia
+        obxCuenta1.transferencia(obxCuenta2, 50);
+        System.out.println("El dinero de la cuenta " + obxCuenta1.getNumConta() + " después de la transferencia es: " + obxCuenta1.getSaldo());
+        System.out.println("El dinero de la cuenta " + obxCuenta2.getNumConta() + " después de la transferencia es: " + obxCuenta2.getSaldo());
     }
     
 }

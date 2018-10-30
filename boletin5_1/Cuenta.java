@@ -57,32 +57,16 @@ public class Cuenta {
     }
     
     //Métodos de ingreso
-    public boolean ingresar(double cantIngresar){
-        boolean comprobacion;
-        if(cantIngresar>0){
+    public double ingresar(double cantIngresar){
             saldo += cantIngresar;
-            comprobacion = true;
-        }
-        else{
-            System.out.println("x");
-            comprobacion = false;
-        }
-        return comprobacion;
+            return saldo;
     }
     
     
     //Método de reintegro
-    public boolean reintrego(double cantReintegro){
-        boolean comprobacion;
-        if(cantReintegro>0){
+    public double reintrego(double cantReintegro){
         saldo -= cantReintegro;
-        comprobacion = true;
-        }
-        else{
-            System.out.println("No hay dinero en la cuenta.");
-            comprobacion = false;
-        }
-        return comprobacion;
+        return saldo;
     }
     
     public void mostrar(){
@@ -91,8 +75,14 @@ public class Cuenta {
     }
     
     //Método transferencia
-    public void transferencia(String cuentaDestino, double saldo){
-        
+    public void transferencia(Cuenta cuentaDestino, double saldo){
+        if(this.saldo>0){
+            this.saldo -= saldo;
+            cuentaDestino.saldo += saldo;
+        }
+        else{
+            System.out.println("La cantidad de dinero en la cuenta no es suficiente");
+        }
     }
     
     
