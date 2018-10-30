@@ -10,7 +10,7 @@ package boletin5_1;
  * @author fojomars
  * @version 1.0
  * @see http://www.github.com/fojomars
- * @since 
+ * @since 2018
  */
 public class Cuenta {
     //Variables
@@ -56,26 +56,44 @@ public class Cuenta {
         return saldo;
     }
     
-    //Métodos de ingreso y reintegro
-    public double ingresar(double cantIngresar){
-        saldo += cantIngresar;
-        return saldo;
+    //Métodos de ingreso
+    public boolean ingresar(double cantIngresar){
+        boolean comprobacion;
+        if(cantIngresar>0){
+            saldo += cantIngresar;
+            comprobacion = true;
+        }
+        else{
+            System.out.println("x");
+            comprobacion = false;
+        }
+        return comprobacion;
     }
     
-    public double reintrego(double cantReintegro){
+    
+    //Método de reintegro
+    public boolean reintrego(double cantReintegro){
+        boolean comprobacion;
+        if(cantReintegro>0){
         saldo -= cantReintegro;
-        return saldo;
+        comprobacion = true;
+        }
+        else{
+            System.out.println("No hay dinero en la cuenta.");
+            comprobacion = false;
+        }
+        return comprobacion;
     }
     
-    public void amosar(){
+    public void mostrar(){
         System.out.println("Nombre cliente: " + nome + "\nNúmero de cuenta: "+ numConta + "\nSaldo: " + saldo
         );
     }
     
     //Método transferencia
-    //public double transferencia(String cuentaDestino, double saldo){
+    public void transferencia(String cuentaDestino, double saldo){
         
-    //}
+    }
     
     
 }
